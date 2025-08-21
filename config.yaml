@@ -1,0 +1,51 @@
+# ============================
+# API Keys
+# ============================
+openai_api_key: "sk-XXX"
+serpapi_api_key: "XXX"
+serper_api_key: "XXX"
+
+# ============================
+# LLM Settings
+# ============================
+model: "gpt-4o-mini"        # Can be gpt-3.5-turbo or other OpenAI-compatible models
+temperature: 0.2      # Lower = more deterministic answers
+max_tokens: 1500      # Output token limit for answers
+top_p: 1.0
+frequency_penalty: 0.0
+presence_penalty: 0.0
+
+# ============================
+# Iterative RAG Loop Settings
+# ============================
+max_steps: 5           # Max think → search → read → answer cycles
+search_top_k: 3        # Number of search results to fetch per tool call
+stop_when_confident: true  # Stop early if LLM provides <answer>
+
+# ============================
+# Web Search
+# ============================
+search_engine: "serper"   # Options: "serper" or "serpapi"
+serpapi_engine: "google"   # Engine type for SerpAPI (can be google, bing, etc.)
+search_region: us
+search_lang: en
+
+# ============================
+# Logging & Output
+# ============================
+save_logs: true
+log_file: "logs/session_log.jsonl"  # Path to save each reasoning step
+
+# ============================
+# Debug flags
+# ============================
+debug_fake_llm: true        # LLM returns canned XML
+debug_fake_search: false    # optional: return fake URLs
+debug_fake_fetch: false     # optional: return fake pages
+
+#printing in console
+debug_log_prompts: false          # brief console previews
+debug_prompt_chars: 400          # how many chars to preview in console
+debug_dump_full_prompts: false    # write full prompts to outputs/debug_prompts
+debug_save_pages: true           # save fetched page text to files
+debug_save_trace_md: true        # write a per-step Markdown trace

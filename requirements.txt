@@ -1,0 +1,26 @@
+# --- Core (required) ---
+openai>=1.40.0
+PyYAML>=6.0.1
+requests>=2.32.3
+typing_extensions>=4.12.2  # helpful on Python <3.11
+
+# --- Optional: Excel batch mode (run_excel_batch) ---
+pandas>=2.2.2
+openpyxl>=3.1.3
+
+# --- Optional: better HTML → text extraction (fetch_pages fallback) ---
+trafilatura>=1.6.3        # high-quality article text extraction
+lxml>=5.2.1               # trafilatura dependency (pin to a recent, prebuilt wheel)
+beautifulsoup4>=4.12.3    # only if you add BS4-based cleaners (not strictly required now)
+
+# --- Optional: if you vendor/enable SimpleTextBrowser from DeepResearcher ---
+pathvalidate>=3.2.1
+# smolagents>=0.2.0       # only if SimpleTextBrowser you copied imports it
+# brotli>=1.1.0           # sometimes needed for certain sites; not always required
+
+# --- Optional: if you switch to SerpAPI’s SDK (you currently use Serper via HTTP) ---
+# google-search-results>=2.4.2
+
+# --- Dev / nice-to-haves (safe to omit) ---
+# python-dotenv>=1.0.1    # if you want to load keys from a .env file
+# tqdm>=4.66.4            # progress bars
